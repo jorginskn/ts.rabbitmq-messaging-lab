@@ -1,0 +1,4 @@
+interface:
+  display_name: "Especialista RabbitMQ .NET"
+  short_description: "Arquitetura, implementação e diagnóstico de RabbitMQ com .NET"
+  default_prompt: "Use $rabbitmq-dotnet-specialist para projetar, implementar, revisar ou diagnosticar esta solução RabbitMQ em .NET."
