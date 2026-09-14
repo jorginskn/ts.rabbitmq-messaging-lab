@@ -5,13 +5,15 @@ async function producer() {
     const connection = await amqp.connect("amqp://admin:admin@localhost:5672");
     const channel = await connection.createChannel();
 
-    const queue = "hello";
-    const message = "Hello World!";
+    const queue = "products";
+    const message =  JSON.stringify({id: 1, name: "Product 1", price: 100 }); 
 
     await channel.assertQueue(queue);
-    channel.sendToQueue(queue, Buffer.from(message));
+    channel.sendToQueue(queue, Buffer.from(message),{
+      contentType: "application/json"
+    });
 
-    console.log(`[X] Sent ${message}`);
+    console.log(`[X] Sent message: ${message}`);
     setTimeout(async () => {
       await connection.close();
       process.exit(0);
