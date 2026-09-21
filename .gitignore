@@ -1,0 +1,21 @@
+# Dependências
+node_modules/
+
+# Compilação e cobertura
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Variáveis de ambiente locais
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Logs
+*.log
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
